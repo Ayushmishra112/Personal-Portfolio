@@ -5,12 +5,9 @@ import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon4.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
 import { HashLink } from 'react-router-hash-link';
-import {
-  BrowserRouter as Router
-} from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 
 export const NavBar = () => {
-
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
 
@@ -26,7 +23,7 @@ export const NavBar = () => {
     window.addEventListener("scroll", onScroll);
 
     return () => window.removeEventListener("scroll", onScroll);
-  }, [])
+  }, []);
 
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
@@ -36,8 +33,10 @@ export const NavBar = () => {
     <Router>
       <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
         <Container>
-          <Navbar.Brand href="/">
-            <img src={logo} alt="Logo" className="logo-blend"/>
+          <Navbar.Brand>
+            <HashLink to="#home">
+              <img src={logo} alt="Logo" className="logo-blend" />
+            </HashLink>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
@@ -62,5 +61,5 @@ export const NavBar = () => {
         </Container>
       </Navbar>
     </Router>
-  )
+  );
 }
