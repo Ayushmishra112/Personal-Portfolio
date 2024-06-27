@@ -13,11 +13,11 @@ app.use("/", router);
 console.log(`Email User: ${process.env.EMAIL_USER}`);
 console.log(`Email Pass: ${process.env.EMAIL_PASS}`);
 
-if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
-  console.log("Environment variables loaded successfully");
-} else {
-  console.log("Failed to load environment variables");
-}
+// if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+//   console.log("Environment variables loaded successfully");
+// } else {
+//   console.log("Failed to load environment variables");
+// }
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
